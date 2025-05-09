@@ -5,9 +5,10 @@ type FormInputProps = {
     id: string;
     type?: string; // optional, default ke "text"
     placeholder?: string; // optional
-    // value?: string;
-    // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
+    errorMessage?: string;
 };
 
 const FormInput: React.FC<FormInputProps> = ({
@@ -15,9 +16,10 @@ const FormInput: React.FC<FormInputProps> = ({
     id,
     type = "text",
     placeholder = "",
-    // value,
-    // onChange,
+    value,
+    onChange,
     required = false,
+    errorMessage,
 }) => {
     return (
         <div className="flex flex-col gap-[8px] w-full">
@@ -28,11 +30,14 @@ const FormInput: React.FC<FormInputProps> = ({
                 id={id}
                 type={type}
                 placeholder={placeholder}
-                // value={value}
-                // onChange={onChange}
+                value={value}
+                onChange={onChange}
                 required={required}
                 className="border border-neutral-200 focus:outline-neutral-200 w-full py-[20px] px-[16px] bg-neutral-50"
             />
+            {errorMessage && (
+                <p className="text-sm text-red-500 mt-1">{errorMessage}</p>
+            )}
         </div>
     );
 };
