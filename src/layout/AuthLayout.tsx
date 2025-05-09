@@ -64,7 +64,7 @@ export default function AuthLayout({ children }: MyComponentProps) {
                 style={{
                     backgroundImage: `url(${BgForm})`,
                 }}
-                className="w-[55%] py-[104px] px-[130px]  rounded-xl flex flex-row items-center justify-center bg-cover bg-center bg-no-repeat h-[100%]">
+                className="min-h-screen w-[55%] py-[104px] px-[130px]  rounded-2xl flex flex-row items-center justify-center bg-cover bg-center bg-no-repeat h-[100%]">
                 {children}
             </div>
             {/* <p className="text-3xl italic">Hallow Login</p> */}
