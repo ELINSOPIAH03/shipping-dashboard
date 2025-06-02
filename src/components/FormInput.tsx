@@ -23,7 +23,7 @@ const FormInput: React.FC<FormInputProps> = ({
 }) => {
     return (
         <div className="flex flex-col gap-[8px] w-full">
-            <label htmlFor={id} className="text-white text-base font-bold leading-[23px]">
+            <label htmlFor={id} className="text-white text-sm sm:text-base font-bold leading-[23px]">
                 {label}
             </label>
             <input
@@ -33,10 +33,10 @@ const FormInput: React.FC<FormInputProps> = ({
                 value={value}
                 onChange={onChange}
                 required={required}
-                className="border border-neutral-200 focus:outline-neutral-200 w-full py-[20px] px-[16px] bg-neutral-50"
+                className="border text-xs sm:text-sm border-neutral-200 focus:outline-neutral-200 w-full py-[15px] px-[10px] sm:py-[20px] sm:px-[16px] bg-neutral-50"
             />
             {errorMessage && (
-                <p className="text-sm text-red-500 mt-1">{errorMessage}</p>
+                <p className="text-xs sm:text-sm text-red-500 mt-1">{errorMessage}</p>
             )}
         </div>
     );

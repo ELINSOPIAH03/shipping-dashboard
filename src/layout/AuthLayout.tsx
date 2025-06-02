@@ -19,7 +19,7 @@ export default function AuthLayout({ children }: MyComponentProps) {
             <div className="w-full lg:w-[45%] flex flex-col gap-[31px] sm:gap-[60px]">
                 <img
                     src={Logo}
-                    className="sm:mt-[82px] h-[44px] w-3xs"
+                    className="h-[33px] sm:mt-[82px] sm:h-[44px] sm:w-3xs self-start"
                     alt="ic-logo" />
                 <div className="flex flex-col gap-[16px] sm:gap-[32px]">
                     <p className="text-4xl sm:text-5xl font-normal leading-[120%] tracking-[-2%] uppercase">
