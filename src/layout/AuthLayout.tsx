@@ -15,14 +15,14 @@ type MyComponentProps = {
 
 export default function AuthLayout({ children }: MyComponentProps) {
     return (
-        <div className="bg-white p-[34px] flex w-full gap-[38px]">
-            <div className="w-[45%] flex flex-col gap-[60px]">
+        <div className="bg-white p-[16px] sm:p-[34px] flex flex-col sm:flex-row w-full gap-[38px]">
+            <div className="w-full lg:w-[45%] flex flex-col gap-[31px] sm:gap-[60px]">
                 <img
                     src={Logo}
-                    className="mt-[82px] h-[44px] w-3xs"
+                    className="sm:mt-[82px] h-[44px] w-3xs"
                     alt="ic-logo" />
-                <div className="flex flex-col gap-[32px]">
-                    <p className="text-5xl font-normal leading-[120%] tracking-[-2%] uppercase">
+                <div className="flex flex-col gap-[16px] sm:gap-[32px]">
+                    <p className="text-4xl sm:text-5xl font-normal leading-[120%] tracking-[-2%] uppercase">
                         Let's log in now <br />
                         to access exclusive features
                     </p>
@@ -36,21 +36,21 @@ export default function AuthLayout({ children }: MyComponentProps) {
                     style={{
                         backgroundImage: `url(${BgCard})`,
                     }}
-                    className="rounded-xl flex items-center bg-cover bg-center bg-no-repeat h-full pr-[40px]">
+                    className="rounded-xl flex items-center bg-cover bg-center bg-no-repeat h-full p-[40px] sm:p-[0px] sm:pr-[40px]">
                     <img
                         src={TruckImg}
-                        className="h-[250px]"
+                        className="hidden sm:flex sm:h-[250px]"
                         alt="trcuktrcuk" />
-                    <div className="w-1/2 flex flex-col gap-[8px]">
-                        <p className="text-white text-4xl font-normal leading-[51px] tracking-[1%] uppercase">
+                    <div className="w-full sm:w-1/2 flex flex-col gap-[8px] text-center sm:text-start">
+                        <p className="text-3xl text-white sm:text-4xl font-normal leading-[51px] tracking-[1%] uppercase">
                             GET FREE DEMO</p>
-                        <p className="text-white text-sm leading-[20px] tracking-[1px]">
+                        <p className="text-white text-xs sm:text-sm leading-[20px] tracking-[1px]">
                             Explore dashboard , Click here!
                         </p>
                         <div className="flex flex-row itemx-center justify-center gap-[8px] bg-primary-500 h-[44px]">
                             <Link
                                 to="/"
-                                className="text-white text-base font-bold flex flex-row items-center">
+                                className="text-white text-sm sm:text-base font-bold flex flex-row items-center">
                                 View Detail</Link>
                             <img
                                 src={IcRightUp}
@@ -64,7 +64,7 @@ export default function AuthLayout({ children }: MyComponentProps) {
                 style={{
                     backgroundImage: `url(${BgForm})`,
                 }}
-                className="min-h-screen w-[55%] py-[104px] px-[130px]  rounded-2xl flex flex-row items-center justify-center bg-cover bg-center bg-no-repeat h-[100%]">
+                className="min-h-screen w-full sm:w-[55%] py-[104px] px-[10px] sm:px-[130px]  rounded-2xl flex flex-row items-center justify-center bg-cover bg-center bg-no-repeat h-[100%]">
                 {children}
             </div>
             {/* <p className="text-3xl italic">Hallow Login</p> */}
