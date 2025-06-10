@@ -3,7 +3,10 @@
 
 @theme {
   --color-netral-500: #667085; 
+  --color-netral-400: #98A2B3; 
+  --color-primary-100: #DBFAE6; 
   --color-primary-500: #17B26A; 
+  --color-primary-700: #067647; 
   --color-blur-35: #4B4B4B59; 
 }
 
