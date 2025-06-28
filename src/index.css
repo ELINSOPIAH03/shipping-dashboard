@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 @theme {
+  --color-netral-25: #FCFCFD; 
   --color-netral-500: #667085; 
   --color-netral-400: #98A2B3; 
+  --color-netral-800: #1D2939; 
   --color-primary-100: #DBFAE6; 
   --color-primary-500: #17B26A; 
   --color-primary-700: #067647; 
@@ -94,3 +96,27 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+.react-calendar-heatmap text{
+  font-size: 7px !important;
+}
+
+.react-calendar-heatmap{
+  height: 100%;
+  min-height: 220px;
+}
+
+.color-empty {
+  fill: #eeeeee;
+}
+.color-scale-1 {
+  fill: #c6e48b;
+}
+.color-scale-2 {
+  fill: #7bc96f;
+}
+.color-scale-3 {
+  fill: #239a3b;
+}
+.color-scale-4 {
+  fill: #196127;
+}

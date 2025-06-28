@@ -40,7 +40,7 @@ export default function Login() {
     const handleSubmit = () => {
         if (validateForm()) {
             // semua valid, lanjut ke halaman utama
-            navigate("/");
+            navigate("/dashboard");
         } else {
             // error ditemukan, jangan lanjut
             console.log("Terdapat input yang tidak valid");
