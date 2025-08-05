@@ -1,0 +1,17 @@
+[
+    {
+        "city": "Jakarta",
+        "motor": 1200,
+        "mobil": 800
+    },
+    {
+        "city": "Bandung",
+        "motor": 900,
+        "mobil": 650
+    },
+    {
+        "city": "Surabaya",
+        "motor": 750,
+        "mobil": 600
+    }
+]
