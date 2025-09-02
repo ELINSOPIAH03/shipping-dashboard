@@ -75,12 +75,12 @@ const CityPopularChart = () => {
     }
 
     return (
-        <div>
-            <div className="flex items-center gap-[9px]">
+        <div className='w-full h-full'>
+            <div className="w-full flex items-center gap-[9px]">
                 <IconBox>
                     <img src={buildingIcons} alt="box" />
                 </IconBox>
-                <p className="text-xl font-bold text-netral-800">Shipment Analytics</p>
+                <p className="text-xl font-bold text-netral-800">Popular City</p>
             </div>
             <Bar data={chartData} options={options}/>
         </div>

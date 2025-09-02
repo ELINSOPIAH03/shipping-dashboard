@@ -12,8 +12,11 @@
   "dependencies": {
     "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
+    "@react-google-maps/api": "^2.20.7",
     "@tailwindcss/vite": "^4.1.5",
     "chart.js": "^4.5.0",
+    "datatables.net-dt": "^2.3.2",
+    "datatables.net-react": "^1.0.1",
     "date-fns": "^4.1.0",
     "react": "^19.0.0",
     "react-calendar-heatmap": "^1.10.0",
