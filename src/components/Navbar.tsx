@@ -107,7 +107,7 @@ export default function Navbar() {
                                     className="size-40"
                                 />
                             </div>
-                            <div className="hidden md:block">
+                            <div className="hidden lg:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
                                     {navigation.map((item) => (
                                         <a
@@ -136,7 +136,7 @@ export default function Navbar() {
                                 </div>
                             </div>
                         </div>
-                        <div className="hidden md:block">
+                        <div className="hidden lg:block">
                             <div className="ml-4 flex items-center md:ml-6 gap-[10px]">
                                 <button
                                     type="button"
@@ -150,7 +150,7 @@ export default function Navbar() {
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="relative ml-3">
                                     <div>
-                                        <MenuButton className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                                        <MenuButton className="relative flex max-w-xs items-center rounded-full bg-primary-500 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                                             <span className="absolute -inset-1.5" />
                                             <span className="sr-only">Open user menu</span>
                                             <img alt="" src={user.imageUrl} className="size-8 rounded-full" />
@@ -174,9 +174,9 @@ export default function Navbar() {
                                 </Menu>
                             </div>
                         </div>
-                        <div className="-mr-2 flex md:hidden">
+                        <div className="-mr-2 flex lg:hidden">
                             {/* Mobile menu button */}
-                            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-primary-500 p-2 text-gray-100 hover:bg-primary-700 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-100 focus:outline-hidden">
                                 <span className="absolute -inset-0.5" />
                                 <span className="sr-only">Open main menu</span>
                                 <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -186,7 +186,7 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                <DisclosurePanel className="md:hidden">
+                <DisclosurePanel className="lg:hidden">
                     <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                         {navigation.map((item) => (
                             <DisclosureButton
@@ -195,7 +195,7 @@ export default function Navbar() {
                                 href={item.href}
                                 aria-current={item.current ? 'page' : undefined}
                                 className={classNames(
-                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                    item.current ? 'bg-primary-500 text-white' : 'text-gray-300 hover:bg-primary-700 hover:text-white',
                                     'block rounded-md px-3 py-2 text-base font-medium',
                                 )}
                             >
@@ -214,7 +214,7 @@ export default function Navbar() {
                             </div>
                             <button
                                 type="button"
-                                className="relative ml-auto shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+                                className="relative ml-auto shrink-0 rounded-full bg-primary-500 p-1 text-gray-100 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-100 focus:outline-hidden"
                             >
                                 <span className="absolute -inset-1.5" />
                                 <span className="sr-only">View notifications</span>
@@ -227,7 +227,7 @@ export default function Navbar() {
                                     key={item.name}
                                     as="a"
                                     href={item.href}
-                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-primary-700 hover:text-white"
                                 >
                                     {item.name}
                                 </DisclosureButton>
