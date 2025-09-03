@@ -16,6 +16,9 @@ import Inventory from '../assets/icons/ic-inventory.svg';
 import InventoryActive from '../assets/icons/ic-inventory-active.svg';
 import Truck from '../assets/icons/ic-truck.svg';
 import TruckActive from '../assets/icons/ic-truck-active.svg';
+import IconBox from '../assets/icons/ic-box-outline.svg';
+import IconWallet from '../assets/icons/ic-wallet.svg';
+import IconDocument from '../assets/icons/ic-document.svg';
 
 const user = {
     name: 'Tom Cook',
@@ -93,6 +96,13 @@ function classNames(...classes: Array<string | undefined | null | false>): strin
 
 export default function Navbar() {
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+    const [notifications, setNotifications] = useState([
+        { id: 1, title: 'Order Received!', message: 'The latest order has been received, please check and process it', href: '#', category: 'order', isRead: false },
+        { id: 2, title: 'Payment', message: 'Your transaction is being processed by us, wait 2-3 for disbursement to your account', href: '#', category: 'payment', isRead: false },
+        { id: 3, title: 'Complaint!', message: 'Check your order, there is a problem with the customer', href: '#', category: 'complaint', isRead: true },
+        { id: 4, title: 'Order Received!', message: 'The latest order has been received, please check and process it', href: '#', category: 'order', isRead: true },
+        { id: 5, title: 'Payment', message: 'Your transaction is being processed by us, wait 2-3 for disbursement to your account', href: '#', category: 'payment', isRead: true },
+    ]);
     return (
         <>
 
@@ -138,14 +148,66 @@ export default function Navbar() {
                         </div>
                         <div className="hidden lg:block">
                             <div className="ml-4 flex items-center md:ml-6 gap-[10px]">
-                                <button
-                                    type="button"
-                                    className="relative rounded-full bg-primary-100 p-1 text-primary-700 focus:ring-2 focus:outline-hidden"
-                                >
-                                    <span className="absolute -inset-1.5" />
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon aria-hidden="true" className="size-6" />
-                                </button>
+                                {/* Notification dropdown */}
+                                <Menu as="div" className="relative">
+                                    <MenuButton className="relative rounded-full bg-primary-100 p-1 text-primary-700 focus:ring-2 focus:outline-hidden">
+                                        <span className="absolute -inset-1.5" />
+                                        <span className="sr-only">View notifications</span>
+                                        <BellIcon aria-hidden="true" className="size-6" />
+                                        {/* Badge */}
+                                        <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                                        </span>
+                                    </MenuButton>
+
+                                    <MenuItems
+                                        transition
+                                        className="absolute right-0 z-10 mt-2 w-[465px] origin-top-right bg-white py-1 shadow-lg ring-1 ring-black/5 transition 
+                                                    focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 
+                                                    data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                                    >
+                                        {notifications.length === 0 ? (
+                                            <div className="px-4 py-2 text-sm text-gray-500">Tidak ada notifikasi</div>
+                                        ) : (
+                                            <>
+                                                <div className="flex justify-between items-center px-4 py-2 border-b border-gray-200">
+                                                    <p className="text-xl text-neutral-800 font-bold">Notifikasi</p>
+                                                    <button
+                                                        onClick={() =>
+                                                            setNotifications((prev) =>
+                                                                prev.map((n) => ({ ...n, isRead: true }))
+                                                            )
+                                                        }
+                                                        className="text-xs font-bold  text-violet-600 hover:underline"
+                                                    >
+                                                        Mark all as read
+                                                    </button>
+                                                </div>
+                                                {notifications.map((item) => (
+                                                    <MenuItem key={item.id}>
+                                                        <a
+                                                            href={item.href}
+                                                            className={`flex items-start gap-[16px] px-4 py-2 text-sm 
+                                                                ${item.isRead ? "bg-white text-gray-400" : "bg-primary-100 text-gray-500"} 
+                                                                data-focus:bg-primary-100 data-focus:outline-hidden`}
+                                                        >
+                                                            <div className="bg-primary-500 w-[32px] h-[32px] flex items-center justify-center shrink-0 overflow-hidden object-contain">
+                                                                {item.category === 'order' && (<img src={IconBox} alt="box" className='w-[20px] h-[20px]' />)}
+                                                                {item.category === 'payment' && (<img src={IconWallet} alt="box" className='w-[20px] h-[20px]' />)}
+                                                                {item.category === 'complaint' && (<img src={IconDocument} alt="box" className='w-[20px] h-[20px]' />)}
+                                                            </div>
+                                                            <div className="flex flex-col gap-[8px]">
+                                                                <p className='text-sm lg:text-base font-semibold text-neutral-800'>{item.title}</p>
+                                                                {item.message}
+                                                            </div>
+                                                        </a>
+                                                    </MenuItem>
+                                                ))}
+                                            </>
+                                        )}
+                                    </MenuItems>
+                                </Menu>
 
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="relative ml-3">
@@ -209,7 +271,7 @@ export default function Navbar() {
                                 <img alt="" src={user.imageUrl} className="size-10 rounded-full" />
                             </div>
                             <div className="ml-3">
-                                <div className="text-base/5 font-medium text-white">{user.name}</div>
+                                <div className="text-base/5 font-medium text-gray-400">{user.name}</div>
                                 <div className="text-sm font-medium text-gray-400">{user.email}</div>
                             </div>
                             <button
